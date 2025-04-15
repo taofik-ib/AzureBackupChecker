@@ -9,7 +9,7 @@ This project contains a PowerShell script that checks the backup status of all A
 - Provides detailed information including:
   - App Service name and location
   - Resource group
-  - Subscriptionk
+  - Subscription
   - Backup status (Enabled/Disabled)
   - Backup frequency (if enabled)
   - Retention period (if enabled)
