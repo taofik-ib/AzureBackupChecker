@@ -38,7 +38,7 @@ This project contains a PowerShell script that checks the backup status of all A
 2. Navigate to the project directory
 3. Run the script:
    ```powershell
-   ./custombackup.ps1
+   ./custombackup-rest.ps1
    ```
 
 ## Output
