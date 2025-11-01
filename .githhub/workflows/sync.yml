@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: 
   # You can add more triggers, such as scheduled events
   # schedule:
   #   - cron: '0 0 * * *'
