@@ -27,7 +27,12 @@ jobs:
           git checkout -B ${{ env.DEST_BRANCH }}
           git remote add ${{ env.ORIGINAL_REPO_NAME }} https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository_owner }}/${{ env.ORIGINAL_REPO_NAME }}.git
           git remote update
-          git merge ${{ env.ORIGINAL_REPO_NAME }}/main
+
+          echo ".github/** merge=ours" >> .gitattributes
+          git add .gitattributes
+          git commit -m "Protect .github from upstream sync" || true
+          git merge --no-edit --allow-unrelated-histories ${{ env.ORIGINAL_REPO_NAME }}/main
+          
           git push origin ${{ env.DEST_BRANCH }}
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
