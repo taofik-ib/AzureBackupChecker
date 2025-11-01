@@ -32,8 +32,10 @@ jobs:
           git add .gitattributes
           git commit -m "Protect .github from upstream sync" || true
           git merge --no-edit --allow-unrelated-histories ${{ env.ORIGINAL_REPO_NAME }}/main
+
+          git fetch origin ${{ env.DEST_BRANCH }} || true
           
-          git push origin ${{ env.DEST_BRANCH }}
+          git push origin ${{ env.DEST_BRANCH }} --force-with-lease
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
           ORIGINAL_REPO_NAME: ${{ github.event.repository.name }}
