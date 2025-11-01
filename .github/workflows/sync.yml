@@ -23,7 +23,7 @@ jobs:
           git config --global user.email "taofik21.ab@gmail.com"
           git config --global user.name "Taofeek-Ib"
           git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/dest.git
-          cd destination-repo
+          cd tibrahim21/dest
           git remote add ${{ env.ORIGINAL_REPO_NAME }} https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/${{ env.ORIGINAL_REPO_NAME }}.git
           git remote update
           git merge ${{ env.ORIGINAL_REPO_NAME }}/main
