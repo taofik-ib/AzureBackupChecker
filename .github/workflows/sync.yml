@@ -28,7 +28,7 @@ jobs:
           git remote add ${{ env.ORIGINAL_REPO_NAME }} https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository_owner }}/${{ env.ORIGINAL_REPO_NAME }}.git
           git remote update
           git merge ${{ env.ORIGINAL_REPO_NAME }}/main
-          git push origin  git push -u origin ${{ env.DEST_BRANCH }}
+          git push origin ${{ env.DEST_BRANCH }}
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
           ORIGINAL_REPO_NAME: ${{ github.event.repository.name }}
