@@ -22,7 +22,7 @@ jobs:
         run: |
           git config --global user.email "taofik21.ab@gmail.com"
           git config --global user.name "Taofeek-Ib"
-          git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/destination-repo.git
+          git clone https://${{ env.ORG_NAME }}:${{ secrets.DEST_REPO_TOKEN }}@github.com/${{ env.ORG_NAME }}/dest.git
           cd destination-repo
           git remote add ${{ env.ORIGINAL_REPO_NAME }} https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/${{ env.ORIGINAL_REPO_NAME }}.git
           git remote update
